@@ -1,0 +1,11 @@
+<textarea class="instruction-text" placeholder=""></textarea>
+
+
+
+.instruction-text {
+  width: 1000px;
+  height: 200px; 
+}
+
+
+TweenLite.to("textarea", 3, {text:"hello this is some text", ease:Linear.easeNone})

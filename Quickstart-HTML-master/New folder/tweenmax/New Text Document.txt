@@ -1,0 +1,30 @@
+<textarea class="instruction-text" placeholder="My dreams are ....."></textarea>
+
+
+.instruction-text {
+  width: 1000px;
+  height: 200px; 
+}
+
+
+
+Result
+EDIT ON
+$(document).ready( function(){
+
+  var speed = 150;
+  
+  /* -------------------------------------------------*/
+  var placeholderTextParts = $('.instruction-text').attr('placeholder').split('');
+  $('.instruction-text').attr('placeholder','')
+  curIndex = 0;
+  function addToPlaceholder(){
+    var curVal = $(".instruction-text").attr("placeholder");
+    $(".instruction-text").attr("placeholder", curVal + placeholderTextParts[curIndex]  );
+    curIndex++;
+    if( curIndex < placeholderTextParts .length ){
+      setTimeout( addToPlaceholder , speed );
+    }
+  }
+  setTimeout( addToPlaceholder , 500 );
+});

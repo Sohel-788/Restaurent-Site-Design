@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<textarea class="instruction-text" placeholder="My dreams are .....Lambda's new and expanded Chelsea location represents a truly authentic Greek patisserie, featuring breakfasts of fresh croissants and steaming bowls of café.
+						Lamda the best restaurant in town"></textarea>
+	
+	
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/textplugin.min.js"></script>
+	<script type="text/javascript" src="js/tweenmax.min.js"></script>
+	<script type="text/javascript">$(document).ready( function(){
+
+  var speed = 150;
+  
+  /* -------------------------------------------------*/
+  var placeholderTextParts = $('.instruction-text').attr('placeholder').split('');
+  $('.instruction-text').attr('placeholder','')
+  curIndex = 0;
+  function addToPlaceholder(){
+    var curVal = $(".instruction-text").attr("placeholder");
+    $(".instruction-text").attr("placeholder", curVal + placeholderTextParts[curIndex]  );
+    curIndex++;
+    if( curIndex < placeholderTextParts .length ){
+      setTimeout( addToPlaceholder , speed );
+    }
+  }
+  setTimeout( addToPlaceholder , 500 );
+});</script>
+</body>
+</html>
